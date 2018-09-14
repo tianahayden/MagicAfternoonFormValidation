@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <h1>Form Validation</h1>
+</head>
+
+<body>
+    <form>
+        <label>First Name :</label>
+        <input type='text' placeholder="first name" pattern="[A-Za-z]{2,24}" required /><br>
+        <label>Last Name :</label>
+        <input type='text' placeholder="last name" pattern="[A-Za-z]{2,24}" required /><br>
+        <label>Email :</label>
+        <input type='email' placeholder='email' required /><br>
+        <label>Telephone :</label>
+        <select>
+            <option>United States</option>
+            <option>Mexico</option>
+        </select>
+        <input type='text' placeholder='telephone' pattern="[0-9]{10,10}" required /><br>
+        <label>Password :</label>
+        <input id="pass1" type='password' placeholder='password' required /><br>
+        <label>Password Copy :</label>
+        <input id="pass2" type='password' placeholder='password' required /><br>
+        <label>Gender :</label>
+        <select type='gender' placeholder='gender' required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            <option value="Multiple">Multiple</option>
+        </select><br>
+        <label>Height :</label>
+        <select type='number' placeholder='feet' required>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <label>feet</label>
+        <select type='number' placeholder='inches' required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+        </select>
+        <label>inches</label><br>
+        <label>Address :</label>
+        <input type='text' placeholder='Street' required />
+        <input type='text' placeholder='City' pattern="[A-Za-z]{1,}" required />
+        <input type='text' placeholder='State' pattern="[A-Za-z]{2}" required />
+        <input type='number' placeholder='ZIP' maxlength="5" required /><br>
+        <label>Twitter :</label>
+        <input id="twitter" type='text' placeholder='twitter' pattern="[@][A-Za-z0-9_]{1,15}" required /><br>
+        <label>Github :</label>
+        <input type='text' placeholder='github' pattern="[^-][A-Za-z0-9-]{1,39}" required /><br>
+        <label>Origin Start Date :</label>
+        <input id="date" type='date' placeholder='date' min="2017-01-01" max="" required /><br>
+        <label>Pick a color: </label>
+        <input type="color" value="#ffffff"/><br>
+        <label>Shoe Size: </label>
+        <select>
+            <option>Men's</option>
+            <option>Women's</option>
+        </select>
+        <input type="number" step="0.5" min="4" max="15" placeholder="Shoe Size" required/><br>
+        <input type='submit' placeholder="Submit Button">
+    </form>
+    <script>
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("date").setAttribute("max", today);
+    </script>
+</body>
+
+</html>
